@@ -1,4 +1,5 @@
 const AnagramFinder = function (word) {
+    this.word = word
 
 }
 
