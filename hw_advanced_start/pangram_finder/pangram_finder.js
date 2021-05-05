@@ -1,6 +1,7 @@
 const PangramFinder = function (phrase) {
-  this.alphabet = phrase.toLowerCase().split('').filter(eachAlphabet=>eachAlphabet != " ")
   this.pangram = 'qwertyuiopasdfghjklzxcvbnm'.split('')
+  this.alphabet = phrase.toLowerCase().split('').filter(eachAlphabet=>{return eachAlphabet != " " || this.pangram.includes(eachAlphabet) })
+  
 }
 
 PangramFinder.prototype.isPangram = function () {
