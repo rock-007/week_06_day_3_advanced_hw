@@ -8,26 +8,18 @@ AnagramFinder.prototype.findAnagrams = function (otherWords) {
     let foundAnagram = false
 
     if(otherWords != [''] ){ 
-    for (eachWord of otherWords){
-        
-        let characterArray = this.convertToCharacters(eachWord)
-        console.log(characterArray)
-        console.log(this.word)
-        if (characterArray.length ==this.word.length && !this.replica(eachWord)){
-            
-            //console.log(characterArray)
-            foundAnagram =characterArray.every((eachCharacter)=>{
-                return this.word.includes(eachCharacter)
-            })
-        if (foundAnagram == true){
-            result.push(eachWord)
-        }
-        }
+        for (eachWord of otherWords){
+            let characterArray = this.convertToCharacters(eachWord)
 
-        
+            if (characterArray.length ==this.word.length && !this.replica(eachWord)){
+                foundAnagram =characterArray.every((eachCharacter)=>{
+                    return this.word.includes(eachCharacter)
+                })
 
-
-
+                if (foundAnagram == true){
+                result.push(eachWord)
+                }
+            }
         }
     }
     return result;
