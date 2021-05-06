@@ -4,8 +4,6 @@ const AnagramFinder = function (word) {
 }
 
 AnagramFinder.prototype.findAnagrams = function (otherWords) {
-    // let result =[]
-    // let foundAnagram = false
 
     if(otherWords != [''] ){ 
 
@@ -18,9 +16,9 @@ AnagramFinder.prototype.findAnagrams = function (otherWords) {
                     return this.word.includes(eachCharacter)
                 });
             }; 
+
             return result;
         })
-
 
     };
     return result;
