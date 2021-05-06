@@ -5,14 +5,15 @@ const PangramFinder = function (phrase) {
 }
 
 PangramFinder.prototype.isPangram = function () {
-    onlyAlphabet = this.removeSpacesAndNonAlphabets()
-  return this.pangram.every(eachAlphabet =>onlyAlphabet.includes(eachAlphabet))
-}
+    let onlyAlphabet = this.removeSpacesAndNonAlphabets();
+
+    return this.pangram.every(eachAlphabet =>onlyAlphabet.includes(eachAlphabet))
+};
 
 PangramFinder.prototype.removeSpacesAndNonAlphabets = function () {
 
-  return this.alphabet.filter(eachAlphabet=>{return eachAlphabet != " " || this.pangram.includes(eachAlphabet) })
+  return this.alphabet.filter(eachAlphabet=>{return eachAlphabet != " " || this.pangram.includes(eachAlphabet) });
 
-}
+};
 
 module.exports = PangramFinder;

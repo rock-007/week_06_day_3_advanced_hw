@@ -12,16 +12,16 @@ AnagramFinder.prototype.findAnagrams = function (otherWords) {
             let characterArray = this.convertToCharacters(eachWord)
 
             if (characterArray.length ==this.word.length && !this.replica(eachWord)){
-                foundAnagram =characterArray.every((eachCharacter)=>{
+                let foundAnagram =characterArray.every((eachCharacter)=>{
                     return this.word.includes(eachCharacter)
-                })
+                });
 
                 if (foundAnagram == true){
-                result.push(eachWord)
-                }
-            }
-        }
-    }
+                result.push(eachWord);
+                };
+            };
+        };
+    };
     return result;
 
 }
