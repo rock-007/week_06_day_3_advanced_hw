@@ -4,23 +4,24 @@ const AnagramFinder = function (word) {
 }
 
 AnagramFinder.prototype.findAnagrams = function (otherWords) {
-    let result =[]
-    let foundAnagram = false
+    // let result =[]
+    // let foundAnagram = false
 
     if(otherWords != [''] ){ 
-        for (eachWord of otherWords){
+
+        return otherWords.filter((eachWord)=>{
             let characterArray = this.convertToCharacters(eachWord)
+            let result =false
 
             if (characterArray.length ==this.word.length && !this.replica(eachWord)){
-                let foundAnagram =characterArray.every((eachCharacter)=>{
+                result = characterArray.every((eachCharacter)=>{
                     return this.word.includes(eachCharacter)
                 });
+            }; 
+            return result;
+        })
 
-                if (foundAnagram == true){
-                result.push(eachWord);
-                };
-            };
-        };
+
     };
     return result;
 
